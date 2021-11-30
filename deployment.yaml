@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: client-port
 spec:
+  type: NodePort
   ports:
     - port: 8080
-      protocol: TCP
-  clusterIP: None
+      targetPort: 8080
+      nodePort: 30000
   selector:
     app: demo-app
 ---
@@ -29,3 +30,5 @@ spec:
       containers:
         - name: demo-app
           image: demo-image
+          ports:
+            - containerPort: 8080
