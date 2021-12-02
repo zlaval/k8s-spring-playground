@@ -16,6 +16,10 @@ build:
   artifacts:
     - image: demo-image
       jib: { }
+      hooks:
+        before:
+          - command: [ "cmd.exe","/C","remove_images.bat" ]
+            os: [ windows ]
 deploy:
   kubectl:
     manifests:

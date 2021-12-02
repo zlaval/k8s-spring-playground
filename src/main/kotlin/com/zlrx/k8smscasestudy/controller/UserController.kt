@@ -17,7 +17,12 @@ class UserController {
     @GetMapping("/user")
     fun getUsers(): List<User> {
         logger.info("Request endpoint: /user")
-        return listOf(User(1L, "Zalan"), User(2L, "Laura"), User(thirdId.toLong(), "Erik"), User(forthId.toLong(), "Alex"))
+        return listOf(
+            User(1L, "Zalan"),
+            User(2L, "Laura"),
+            User(thirdId.toLong(), "Erik"),
+            User(forthId.toLong(), "Alex")
+        )
     }
 
 }
