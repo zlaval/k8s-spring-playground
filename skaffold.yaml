@@ -10,7 +10,7 @@ deploy:
   kubectl:
     manifests:
       - deployment.yaml
-portForward:
-  - resourceType: service
-    resourceName: client-port
-    port: 8080
+#portForward:
+#  - resourceType: service
+#    resourceName: client-port
+#    port: 8080

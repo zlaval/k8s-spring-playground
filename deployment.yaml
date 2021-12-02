@@ -5,8 +5,12 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - name: app-port
+      port: 8080
       targetPort: 8080
+    - name: debug-port
+      port: 5005
+      targetPort: 5005
   selector:
     app: demo-app
 ---
@@ -50,4 +54,3 @@ spec:
               name: app-port
             - containerPort: 5005
               name: debug-port
-
