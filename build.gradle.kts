@@ -63,6 +63,7 @@ jib {
         appRoot = "/app"
         workingDirectory = "/app"
         creationTime = "USE_CURRENT_TIMESTAMP"
+        environment = mapOf("JAVA_TOOL_OPTIONS" to "-agentlib:jdwp=transport=dt_socket,address=5005,server=y,suspend=n")
     }
 //    pluginExtensions {
 //        pluginExtension {

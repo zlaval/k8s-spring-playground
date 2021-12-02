@@ -10,6 +10,7 @@ spec:
   selector:
     app: demo-app
 ---
+#localhost:80
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -46,3 +47,7 @@ spec:
           image: demo-image
           ports:
             - containerPort: 8080
+              name: app-port
+            - containerPort: 5005
+              name: debug-port
+
