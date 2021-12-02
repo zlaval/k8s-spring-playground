@@ -3,6 +3,16 @@ kind: Config
 metadata:
   name: k8sdemo
 build:
+  tagPolicy:
+    customTemplate:
+      template: "{{.GIT}}-{{.DATE}}"
+      components:
+        - name: GIT
+          gitCommit: { }
+        - name: DATE
+          dateTime:
+            format: 2006-01-02_15-04-05
+            timezone: UTC
   artifacts:
     - image: demo-image
       jib: { }
