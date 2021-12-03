@@ -14,3 +14,7 @@ logging:
   level:
     root: info
     org.hibernate: debug
+server:
+  shutdown: graceful
+test.name: ${TEST_NAME:Joker}
+

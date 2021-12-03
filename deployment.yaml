@@ -49,8 +49,31 @@ spec:
       containers:
         - name: demo-app
           image: demo-image
+          livenessProbe:
+            httpGet:
+              port: 9000
+              path: /actuator/health/liveness
+          readinessProbe:
+            initialDelaySeconds: 5
+            httpGet:
+              port: 9000
+              path: /actuator/health/readiness
+          lifecycle:
+            preStop:
+              exec:
+                command: [ "sh", "-c", "sleep 5" ]
+          envFrom:
+            - configMapRef:
+                name: demo-config
           ports:
             - containerPort: 8080
               name: app-port
             - containerPort: 5005
               name: debug-port
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo-config
+data:
+  TEST_NAME: Superman
