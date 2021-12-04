@@ -76,4 +76,4 @@ kind: ConfigMap
 metadata:
   name: demo-config
 data:
-  TEST_NAME: Superman
+  test.name: Batman

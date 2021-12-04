@@ -16,5 +16,15 @@ logging:
     org.hibernate: debug
 server:
   shutdown: graceful
-test.name: ${TEST_NAME:Joker}
+spring:
+  application:
+    name: demo-application
+  cloud:
+    kubernetes:
+      config:
+        name: config-name
+        namespace: default-namespace
+        sources:
+          - name: demo-config
+
 
