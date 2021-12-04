@@ -23,6 +23,7 @@ build:
 deploy:
   kubectl:
     manifests:
+      - postgres-deployment.yaml
       - deployment.yaml
 #portForward:
 #  - resourceType: service

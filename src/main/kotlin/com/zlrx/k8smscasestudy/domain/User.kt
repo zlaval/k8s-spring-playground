@@ -2,6 +2,7 @@ package com.zlrx.k8smscasestudy.domain
 
 import javax.persistence.Basic
 import javax.persistence.Entity
+import javax.persistence.GeneratedValue
 import javax.persistence.Id
 import javax.persistence.Table
 
@@ -11,6 +12,7 @@ import javax.persistence.Table
 data class User(
 
     @Id
+    @GeneratedValue
     var id: Long? = null,
 
     @Basic
