@@ -18,13 +18,16 @@ build:
       jib: { }
       hooks:
         before:
-          - command: [ "cmd.exe","/C","remove_images.bat" ]
+          - command: [ "cmd.exe","/C","script/remove_images.bat" ]
             os: [ windows ]
 deploy:
-  kubectl:
-    manifests:
-      - postgres-deployment.yaml
-      - deployment.yaml
+  kustomize:
+    paths:
+      - deployment/overlays/local
+#  kubectl:
+#    manifests:
+#      - deployment/postgres-deployment.yaml
+#      - deployment/deployment.yaml
 #portForward:
 #  - resourceType: service
 #    resourceName: client-port
