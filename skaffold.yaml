@@ -18,7 +18,7 @@ build:
       jib: { }
       hooks:
         before:
-          - command: [ "cmd.exe","/C","script/remove_images.bat" ]
+          - command: [ "cmd.exe","/C","remove_images.bat" ]
             os: [ windows ]
 deploy:
   kustomize:

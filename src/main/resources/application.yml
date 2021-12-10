@@ -25,11 +25,11 @@ spring:
         name: config-name
         namespace: default-namespace
         sources:
-          - name: demo-config
+          - name: local-demo-config
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: admin
-    password: admin123
+    password: admin
   jpa:
     show-sql: true
     hibernate:
