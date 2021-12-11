@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: demo-app-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: demo-app
@@ -34,6 +34,13 @@ spec:
           volumeMounts:
             - mountPath: /app/config
               name: config-volume
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+            requests:
+              cpu: "250m"
+              memory: "128Mi"
           ports:
             - containerPort: 8080
               name: app-port

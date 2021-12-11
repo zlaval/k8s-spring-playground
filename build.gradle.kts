@@ -48,7 +48,7 @@ tasks.withType<Test> {
 
 jib {
     from {
-        image = "openjdk"
+        image = "openjdk:17.0.1-slim"
     }
     to {
         image = "zalerix/k8smscasestudy"

@@ -4,6 +4,7 @@ resources:
   - client-port-service.yaml
   - client-port-ingress.yaml
   - app-deployment.yaml
+  - hpa.yaml
 commonAnnotations:
   name: demo-app
   version: 1.0.0kubec
