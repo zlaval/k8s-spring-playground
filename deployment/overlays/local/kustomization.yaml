@@ -4,15 +4,13 @@ commonLabels:
   environment: local
 namePrefix: local-
 
-#configMapGenerator:
-#  - name: demo-config
-#    behavior: create
-#    files:
-#      - configs/application.yml
+configMapGenerator:
+  - name: demo-config
+    files:
+      - configs/application.yml
 
 resources:
   - ../../base
-  - app-configmap.yaml
 
 components:
   - ../../components/postgres

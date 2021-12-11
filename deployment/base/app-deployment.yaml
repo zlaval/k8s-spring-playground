@@ -31,8 +31,15 @@ spec:
           envFrom:
             - configMapRef:
                 name: demo-config
+          volumeMounts:
+            - mountPath: /app/config
+              name: config-volume
           ports:
             - containerPort: 8080
               name: app-port
             - containerPort: 5005
               name: debug-port
+      volumes:
+        - name: config-volume
+          configMap:
+            name: demo-config
