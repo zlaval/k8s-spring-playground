@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app-deployment
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: demo-app
+          livenessProbe:
+            initialDelaySeconds: 5
