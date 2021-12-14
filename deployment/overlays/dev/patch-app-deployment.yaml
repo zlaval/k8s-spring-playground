@@ -3,11 +3,9 @@ kind: Deployment
 metadata:
   name: demo-app-deployment
 spec:
-  replicas: 2
+  replicas: 1
   template:
     spec:
       containers:
         - name: demo-app
           image: demo-image
-          livenessProbe:
-            initialDelaySeconds: 5

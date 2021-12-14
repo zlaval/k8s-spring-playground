@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: demo-app
-          image: demo-image
+          image: zalerix/k8smscasestudy
           livenessProbe:
             httpGet:
               port: 9000

@@ -3,6 +3,8 @@ kind: Config
 metadata:
   name: k8sdemo
 build:
+  local:
+    push: false
   tagPolicy:
     customTemplate:
       template: "{{.GIT}}-{{.DATE}}"
@@ -24,6 +26,13 @@ deploy:
   kustomize:
     paths:
       - deployment/overlays/local
+profiles:
+  - name: dev
+    deploy:
+      kustomize:
+        paths:
+          - deployment/overlays/dev
+
 #  kubectl:
 #    manifests:
 #      - deployment/postgres-deployment.yaml

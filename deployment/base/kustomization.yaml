@@ -7,4 +7,4 @@ resources:
   - hpa.yaml
 commonAnnotations:
   name: demo-app
-  version: 1.0.0kubec
+  version: 1.0.0
