@@ -5,4 +5,5 @@ name: default
 steps:
   - name: build
     image: gradle:7.3.1-jdk17
-    commands: gradle build
+    commands:
+      - gradle build
