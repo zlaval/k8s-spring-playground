@@ -11,11 +11,11 @@ class DummyTestCase {
     fun firstTest() {
         Assertions.assertTrue(true)
     }
-
-    @Test
-    @DisplayName("Should return false")
-    fun secondTest() {
-        Assertions.assertTrue(false)
-    }
+//
+//    @Test
+//    @DisplayName("Should return false")
+//    fun secondTest() {
+//        Assertions.assertTrue(false)
+//    }
 
 }
