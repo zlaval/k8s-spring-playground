@@ -11,6 +11,7 @@ configMapGenerator:
 
 resources:
   - ../../base
+  - service-account.yaml
 
 patchesStrategicMerge:
   - patch-app-deployment.yaml

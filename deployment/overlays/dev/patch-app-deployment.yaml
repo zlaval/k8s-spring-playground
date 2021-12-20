@@ -5,6 +5,11 @@ metadata:
 spec:
   replicas: 1
   template:
+#    metadata:
+    #      annotations:
+    #        vault.hashicorp.com/role: "vault-app"
+    #        vault.hashicorp.com/agent-inject: "true"
+    #        vault.hashicorp.com/agent-inject-secret-dbpass: "dev/database/config"
     spec:
       containers:
         - name: demo-app

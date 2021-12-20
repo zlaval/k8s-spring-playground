@@ -1,4 +1,7 @@
 spring:
+#  config:
+  #    import:
+  #      vault://dbpass
   datasource:
     url: jdbc:postgresql://postgres-port:5432/postgres
     username: admin
