@@ -9,5 +9,10 @@ steps:
       - gradle test
   - name: build
     image: gradle:7.3.1-jdk17
+    environment:
+      DOCKER_USER:
+        from_secret: DOCKER_USER
+      DOCKER_PASSWORD:
+        from_secret: DOCKER_PASSWORD
     commands:
       - gradle jib -x test
