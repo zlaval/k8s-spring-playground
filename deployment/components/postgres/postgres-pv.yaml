@@ -8,5 +8,6 @@ spec:
     storage: 300Mi
   accessModes:
     - ReadWriteMany
+  persistentVolumeReclaimPolicy: Delete
   hostPath:
     path: "/mnt/data"

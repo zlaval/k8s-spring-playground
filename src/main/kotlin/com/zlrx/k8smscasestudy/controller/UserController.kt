@@ -14,9 +14,6 @@ class UserController(
     private val repository: UserRepository
 ) {
 
-//    @Value("\${test.name}")
-//    val testName: String = ""
-
     private val random = Random(System.currentTimeMillis());
 
     //private val thirdId = random.nextInt(10, 1000);
@@ -25,19 +22,19 @@ class UserController(
 
     @GetMapping("/user")
     fun getUsers(): List<User> {
-        logger.info("Request endpoint: /user")
+        logger.info("Request endpoint: GET /user")
         return repository.findAll()
 //        return listOf(
 //            User(1L, "Zalan"),
 //            User(2L, "Laura"),
 //            User(thirdId.toLong(), "Erik"),
-//            User(forthId.toLong(), "Alex"),
-//            User(5, testName)
+//            User(forthId.toLong(), "Alex")
 //        )
     }
 
     @PostMapping("/user")
     fun postUser(@RequestBody user: User): User {
+        logger.info("POST /user")
         return repository.save(user)
     }
 
